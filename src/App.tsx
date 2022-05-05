@@ -30,6 +30,7 @@ function App() {
     app.undo();
     app.undo();
     app.redo();
+    app.move(5, 6);
     app.redo();
     setApp(app.ceo);
     console.log(app.ceo);

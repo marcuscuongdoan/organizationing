@@ -91,6 +91,7 @@ export class EmployeeOrgApp implements IEmployeeOrgApp {
           this.revertMove(employee, supervisor, parent, movedChildren),
         action: () => this.move(employeeID, supervisorID),
       });
+      if (!this.isRedo) this.redoAction = [];
 
       /** reposition part */
       parent.subordinates = parent.subordinates.filter(
@@ -159,7 +160,9 @@ export class EmployeeOrgApp implements IEmployeeOrgApp {
     console.log(this.redoAction);
     const next = this.redoAction.pop();
     if (next && next.action) {
+      this.isRedo = true;
       next.action();
+      this.isRedo = false;
       this.previousAction.push(next);
     }
     // if (this.redoAction && this.redoAction.action) {
