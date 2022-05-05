@@ -128,10 +128,6 @@ export class EmployeeOrgApp implements IEmployeeOrgApp {
     employee.subordinates = movedChildren;
     parent.subordinates = parent.subordinates.concat(employee);
     parent.subordinates.sort((a, b) => a.uniqueId - b.uniqueId);
-    // if (this.previousAction) {
-    //   this.previousAction.nextAction = this.previousAction;
-    //   console.log(this.previousAction);
-    // }
   }
 
   /** use the stored revert action and the moving action also, you can see in move() */
@@ -141,17 +137,6 @@ export class EmployeeOrgApp implements IEmployeeOrgApp {
       prev.revert();
       this.redoAction.push(prev);
     }
-    // if (this.previousAction && this.previousAction.revert) {
-    //   if (this.redoAction) {
-    //     const followingAction = this.redoAction.nextAction;
-    //     this.redoAction = this.previousAction;
-    //     this.redoAction.nextAction = followingAction;
-    //   } else {
-    //     this.redoAction = this.previousAction;
-    //   }
-    //   this.previousAction.revert();
-    //   this.previousAction = this.previousAction.previousAction;
-    // }
     return;
   }
 
@@ -165,15 +150,6 @@ export class EmployeeOrgApp implements IEmployeeOrgApp {
       this.isRedo = false;
       this.previousAction.push(next);
     }
-    // if (this.redoAction && this.redoAction.action) {
-    //   this.isRedo = true;
-    //   this.redoAction.action();
-    //   this.isRedo = false;
-    //   //   this.redoAction.previousAction = this.redoAction;
-    //   //   this.redoAction.nextAction = this.action = this.redoAction || undefined;
-    //   this.redoAction = this.redoAction.nextAction;
-    //   console.log("after redo", this.redoAction);
-    // }
     return;
   }
 }
