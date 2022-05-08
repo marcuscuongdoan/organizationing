@@ -5,7 +5,7 @@ Hi! I'm Cuong Doan aka Marcus. I would like to describe my test strategy here.
 In order to fulfill the test requirement, I have used below theories:
 
 - **Depth First Search** (DFS): to look for supervisor, employee and his/her supervisor in a graph/tree-like organization chart, I use DFS to receive the result.
-- **Command Pattern** with **linked list** to store, use and receive **_chain of action_** that can be use for undo/redo. This method not only helps to revert the action by _doing the action in the opposite way_, but also makes the app more efficient in chaining the undo and redo list.
+- **Command Pattern** with **stacked list** to store, use and receive **_chain of action_** that can be use for undo/redo. This method not only helps to revert the action by _doing the action in the opposite way_, but also makes the app more efficient in chaining the undo and redo list.
 
 # Getting Started with Create React App
 
